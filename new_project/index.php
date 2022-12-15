@@ -33,7 +33,7 @@ $run = mysqli_query($con, $query);
                         <th>Item</th>
                         <th>Detail</th>
                         <th>Date</th>
-                        <th>Delete</th>
+                        <th>Delete   |   Update</th>
                     </tr>
                     <?php
                     while($data = mysqli_fetch_assoc($run)){
@@ -43,7 +43,10 @@ $run = mysqli_query($con, $query);
                         <td><?php echo $data['title'];?></td>
                         <td><?php echo $data['detail'];?></td>
                         <td><?php echo $data['date'];?></td>
-                        <td><a href="delete_item.php?del=<?php echo $data['id'];?>" class="btn btn-primary">Delete</a></td>
+                        <td>
+                            <a href="delete_item.php?del=<?php echo $data['id'];?>" class="btn btn-primary">Delete</a>
+                            <a href="update_item.php?update=<?php echo $data['id'];?>" class="btn btn-warning">Update</a>
+                        </td>
                     </tr>
                     <?php
                      }
