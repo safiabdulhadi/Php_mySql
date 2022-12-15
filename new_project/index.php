@@ -1,7 +1,7 @@
 <?php
 include "db-config.php";
 
-$query = "SELECT * FROM `items` WHERE `title` = 'item 2';";
+$query = "SELECT * FROM `items`";
 $run = mysqli_query($con, $query);
 
 
@@ -43,7 +43,7 @@ $run = mysqli_query($con, $query);
                         <td><?php echo $data['title'];?></td>
                         <td><?php echo $data['detail'];?></td>
                         <td><?php echo $data['date'];?></td>
-                        <td><a href="" class="btn btn-primary">Delete</a></td>
+                        <td><a href="delete_item.php?del=<?php echo $data['id'];?>" class="btn btn-primary">Delete</a></td>
                     </tr>
                     <?php
                      }
